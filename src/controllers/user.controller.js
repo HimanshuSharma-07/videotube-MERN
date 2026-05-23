@@ -8,8 +8,6 @@ import mongoose from "mongoose";
 
 
 
-
-
 const generateAccessandRefreshTokens = async (userId) => {
     try {
         const user = await User.findById(userId)
@@ -104,17 +102,12 @@ const loginUser = asyncHandler(async (req, res) => {
     // send cookies
     
     const { username, email, password, } = req.body
-    
-    
-    
-
     if (!(username || email)) {
         throw new ApiError(400, "username or email are required")
     }
     if (!password) {
         throw new ApiError(400, "password is required")
     }
-
 
     const findUser = await User.findOne({
         $or: [{ username }, { email }]
