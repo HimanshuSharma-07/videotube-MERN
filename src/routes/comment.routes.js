@@ -1,26 +1,25 @@
-import { Router } from "express"
-import { verifyJWT } from "../middleware/auth.middleware.js"
-import { 
-    addComment,
-    deleteComment,
-    getCommentByVideoId,
-    getVideoCommentByVideoId,
-    getVideoComments,
-    updateComment,
+// import { Router } from "express"
+// import { verifyJWT } from "../middleware/auth.middleware.js"
+// import { 
+//     addComment,
+//     deleteComment,
+//     getVideoCommentByVideoId,
+//     getVideoComments,
+//     updateComment,
 
-} from "../controllers/comment.controller.js"
-
-
-const router = Router();
+// } from "../controllers/comment.controller.js"
 
 
-router.route("/video/:videoId").get(getCommentByVideoId)
+// const router = Router();
 
 
-router.route("/add-comment").post(verifyJWT, addComment)
-router.route("/update/:commentId").patch(verifyJWT, updateComment)
-router.route("/delete/:commentId").delete(verifyJWT, deleteComment)
+// // router.route("/video/:videoId").get(getVideoCommentByVideoId)
+
+
+// router.route("/add-comment").post(verifyJWT, addComment)
+// router.route("/update/:commentId").patch(verifyJWT, updateComment)
+// router.route("/delete/:commentId").delete(verifyJWT, deleteComment)
 
 
 
-export default router;
+// export default router;
